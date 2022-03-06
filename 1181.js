@@ -1,16 +1,20 @@
 //var prompt = function(texto) { return lines.shift();};
 
-var line = parseInt(prompt());
+var column = parseInt(prompt());
 var operation = prompt();
 var M = [];
 var sum = 0;
 
-for (let l = 0; l < 144; l++) {
-  M.push(parseFloat(prompt()));
+for (let i = 0; i < 12; i++) {
+  var aux = [];
+  for (let l = 0; l < 12; l++) {
+    aux.push(parseFloat(prompt()));
+  }
+  M.push(aux);
 }
 
 for (let i = 0; i < 12; i++) {
-  sum = sum + M[i + line * 12];
+  sum = sum + M[i][column];
 }
 
 if ((operation = "M")) {
