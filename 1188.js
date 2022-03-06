@@ -5,7 +5,7 @@ var M = [];
 var sum = 0;
 
 for (let i = 0; i < 12; i++) {
-  var aux = [];
+  let aux = [];
   for (let n = 0; n < 12; n++) {
     aux.push(parseFloat(prompt()));
   }
