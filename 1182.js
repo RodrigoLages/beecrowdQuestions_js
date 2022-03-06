@@ -5,12 +5,16 @@ var operation = prompt();
 var C = [];
 var sum = 0;
 
-for (let l = 0; l < 144; l++) {
-  C.push(parseFloat(prompt()));
+for (let i = 0; i < 12; i++) {
+  var aux = [];
+  for (let l = 0; l < 12; l++) {
+    aux.push(parseFloat(prompt()));
+  }
+  C.push(aux);
 }
 
-for (let i = column; i < 144; i = i + 12) {
-  sum = sum + C[i];
+for (let i = 0; i < 12; i++) {
+  sum = sum + C[i][column];
 }
 
 if ((operation = "M")) {
