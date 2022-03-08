@@ -1,6 +1,6 @@
 //var prompt = function(texto) { return lines.shift();};
 
-var games = parseInt(prompt());
+const games = parseInt(prompt());
 const sheldon = [
   "tesoura papel",
   "papel pedra",
