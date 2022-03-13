@@ -1,23 +1,23 @@
 //var prompt = function(texto) { return lines.shift();};
 
 const cases = parseInt(prompt());
-var registry = [];
+var registry = {};
 
 for (let i = 0; i < cases; i++) {
-  let [a, b] = prompt().split(" ").map(Number);
-  registry.push(a);
-  registry.push(b);
+  let [student, grade] = prompt().split(" ").map(Number);
+  registry[grade] = student;
 }
 
-var highest = registry[1];
+var grades = Object.keys(registry).map(Number);
+var highest = grades[0];
 
-for (let i = 1; i < registry.length; i = i + 2) {
-  highest = (highest + registry[i] + Math.abs(highest - registry[i])) / 2;
+for (let i = 1; i < cases; i++) {
+  highest = (highest + grades[i] + Math.abs(highest - grades[i])) / 2;
   highest = parseFloat(highest.toFixed(1));
 }
 
 if (highest < 8) {
   console.log("Minimum note not reached");
 } else {
-  console.log(registry[registry.indexOf(highest) - 1]);
+  console.log(registry[highest]);
 }
