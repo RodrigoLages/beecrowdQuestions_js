@@ -10,14 +10,16 @@ for (let cases = 1; true; cases++) {
   var qtt = 0;
 
   for (let i = 0; i < seq.length; i++) {
-    var equal = 0;
+    var equal = true;
 
     for (let n = 0; n < sub.length; n++) {
-      if (sub[n] == seq[i + n]) {
-        equal++;
+      if (sub[n] != seq[i + n]) {
+        equal = false;
+        break;
       }
     }
-    if (equal == sub.length) {
+
+    if (equal) {
       qtt++;
       lastPos = i + 1;
     }
