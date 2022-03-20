@@ -38,11 +38,14 @@ while (true) {
     }
   }
 
-  if (missed.length == 0) {
-    console.log("You Shall All Pass!");
-  } else if (missed.length == players) {
-    console.log("None Shall Pass!");
-  } else {
-    console.log(missed.sort().join(" "));
+  switch (missed.length) {
+    case 0:
+      console.log("You Shall All Pass!");
+      break;
+    case players:
+      console.log("None Shall Pass!");
+      break;
+    default:
+      console.log(missed.sort().join(" "));
   }
 }
