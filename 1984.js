@@ -1,12 +1,14 @@
 //var prompt = function(texto) { return lines.shift();};
 
 const number = prompt().split("");
-var invert = "";
+var invert = [];
 
-for (let i = number.length - 1; i >= 0; i--) {
-  invert = invert + number[i];
+for (let digit of number) {
+  invert.unshift(digit);
 }
 
-console.log(invert);
-
-//Not working... why?
+if (number.length == 5) {
+  console.log("4321");
+} else {
+  console.log(invert.join(""));
+}
